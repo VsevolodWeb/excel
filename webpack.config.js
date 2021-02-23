@@ -4,14 +4,18 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CopyPlugin = require('copy-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
+const isProd = process.env.NODE_ENV === 'production'
+const isDev = !isProd
 const faviconName = 'favicon.ico'
+
+const getFilename = ext => isDev ? `bundle.${ext}` : `bundle.[hash].${ext}`
 
 module.exports = {
 	context: path.resolve(__dirname, 'src'),
 	mode: 'development',
-	entry: './index.js',
+	entry: ['@babel/polyfill', './index.js'],
 	output: {
-		filename: 'bundle.[hash].js',
+		filename: getFilename('js'),
 		path: path.resolve(__dirname, 'dist')
 	},
 	resolve: {
@@ -24,13 +28,38 @@ module.exports = {
 	plugins: [
 		new CleanWebpackPlugin(),
 		new HtmlWebpackPlugin({
-			favicon: faviconName
+			favicon: faviconName,
+			minify: {
+				removeComments: isProd,
+				collapseWhitespace: isProd
+			}
 		}),
 		new CopyPlugin({
-			patterns: [{ from: path.resolve(__dirname, `src/${faviconName}`), to: '' }]
+			patterns: [{from: path.resolve(__dirname, `src/${faviconName}`), to: ''}]
 		}),
 		new MiniCssExtractPlugin({
-			filename: 'bundle.[hash].css'
+			filename: getFilename('css')
 		})
-	]
+	],
+	devtool: isDev ? 'source-map' : false,
+	devServer: {
+		port: 3000,
+		hot: isDev
+	},
+	module: {
+		rules: [
+			{
+				test: /\.scss$/,
+				use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
+			},
+			{
+				test: /\.js$/,
+				exclude: /node_modules/,
+				loader: 'babel-loader',
+				options: {
+					presets: ['@babel/preset-env']
+				},
+			}
+		]
+	}
 }
