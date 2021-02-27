@@ -12,7 +12,6 @@
   },
   "devDependencies": {
     "@babel/core": "^7.13.1",
-    "@babel/polyfill": "^7.12.1",
     "@babel/preset-env": "^7.13.0",
     "@types/copy-webpack-plugin": "^6.4.0",
     "@types/mini-css-extract-plugin": "^1.2.2",
@@ -35,5 +34,9 @@
   },
   "browserslist": [
     "> 0.25%, not dead"
-  ]
+  ],
+  "dependencies": {
+    "@babel/polyfill": "^7.12.1",
+    "normalize.css": "^8.0.1"
+  }
 }
