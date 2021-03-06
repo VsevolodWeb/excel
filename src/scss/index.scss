@@ -1,19 +1,45 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
-@import "~normalize.css";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import '~normalize.css';
+@import 'variables';
+@import 'mixins';
 
 * {
+	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
-	box-sizing: border-box;
+}
+
+@media (min-width: 769px) {
+	html {
+		$browser-context: 16px;
+		font-size: $browser-context;
+	}
+}
+
+@media (max-width: 768px) {
+	html {
+		$browser-context: 14px;
+		font-size: $browser-context;
+	}
+}
+
+
+html, body, #app {
+	height: 100%;
 }
 
 body {
-	font-family: "Roboto", sans-serif;
-	font-size: 12px;
+	font-family: 'Roboto', sans-serif;
+	color: var(--accent-color)
+}
+
+#app {
+	display: flex;
+	flex-direction: column;
 }
 
 
-@import "header";
-@import "toolbar";
-@import "formula";
-@import "table";
+@import 'header';
+@import 'toolbar';
+@import 'formula';
+@import 'table';

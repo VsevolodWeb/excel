@@ -1,6 +1,31 @@
-@import "variables";
-@import "mixins";
+@import 'variables';
+@import 'mixins';
 
 .header {
+	align-items: center;
+	display: flex;
+	padding: 10px;
 
+	&__controls {
+		margin-left: auto;
+	}
+
+	&__control {
+		background-color: transparent;
+		border-color: transparent;
+		margin: 0;
+		cursor: pointer;
+
+		&:not(:last-child) {
+			margin-right: 14px;
+		}
+	}
+
+	&__input {
+		background-color: transparent;
+		border: 1px solid var(--accent-color);
+		box-shadow: none;
+		font-size: 14px;
+		padding: 8px 16px;
+	}
 }

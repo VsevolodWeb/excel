@@ -5,17 +5,18 @@
 	<meta name="viewport"
 	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<link rel="shortcut icon" href="favicon.ico">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<title>Pure Javascript Excel</title>
 </head>
 <body>
-<div id="app">
+<div id="app" class="light">
 	<div class="header">
-		<div class="header__title">
-			<label>
-				<input type="text" class="header__input" value="Новая таблица">
-			</label>
+		<label>
+			<input type="text" class="header__input" value="Новая таблица">
+		</label>
+		<div class="header__controls">
+			<button class="material-icons header__control">delete</button>
+			<button class="material-icons header__control">exit_to_app</button>
 		</div>
 	</div>
 	<div class="toolbar"></div>
