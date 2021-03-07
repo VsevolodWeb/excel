@@ -1,6 +1,23 @@
-@import "variables";
-@import "mixins";
+@import 'variables';
+@import 'mixins';
 
 .formula {
+	align-items: center;
+	display: flex;
 
+	&__title {
+		font-style: italic;
+		padding-right: 15px;
+	}
+
+	&__inputWrapper {
+		flex: 1;
+	}
+
+	&__input {
+		height: 100%;
+		width: 100%;
+		font-size: rem(12);
+		padding: rem(5) rem(10);
+	}
 }

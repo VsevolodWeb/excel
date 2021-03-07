@@ -2,6 +2,20 @@
 @import "mixins";
 
 .table {
+	display: grid;
+	grid-template-columns: repeat(11, 1fr);
+	align-content: flex-start;
 	height: 100%;
 	overflow-y: scroll;
+
+	&__cell {
+		padding: 5px;
+		background-color: #eee;
+	}
+
+	&__header {
+		font-weight: 700;
+		background-color: var(--accent-color);
+		color: var(--main-color);
+	}
 }

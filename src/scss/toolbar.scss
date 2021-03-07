@@ -2,5 +2,11 @@
 @import "mixins";
 
 .toolbar {
+	&__control {
+		display: inline-block;
 
+		&:not(:last-child) {
+			margin-right: rem(8);
+		}
+	}
 }

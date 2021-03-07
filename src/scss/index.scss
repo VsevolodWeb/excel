@@ -1,7 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap');
 @import '~normalize.css';
 @import 'variables';
 @import 'mixins';
+
+.light {
+	--accent-color: #000;
+	--main-color: #fff;
+}
+
+.dark {
+	--accent-color: #fff;
+	--main-color: #000;
+}
 
 * {
 	box-sizing: border-box;
@@ -9,20 +19,15 @@
 	padding: 0;
 }
 
-@media (min-width: 769px) {
-	html {
-		$browser-context: 16px;
-		font-size: $browser-context;
+html {
+	@media (min-width: 769px) {
+		font-size: 18px;
+	}
+
+	@media (max-width: 768px) {
+		font-size: 12px;
 	}
 }
-
-@media (max-width: 768px) {
-	html {
-		$browser-context: 14px;
-		font-size: $browser-context;
-	}
-}
-
 
 html, body, #app {
 	height: 100%;
@@ -30,7 +35,8 @@ html, body, #app {
 
 body {
 	font-family: 'Roboto', sans-serif;
-	color: var(--accent-color)
+	background-color: var(--main-color);
+	color: var(--accent-color);
 }
 
 #app {
@@ -38,8 +44,10 @@ body {
 	flex-direction: column;
 }
 
-
+@import 'base/input';
+@import 'components/control';
 @import 'header';
+@import 'headerMain';
 @import 'toolbar';
 @import 'formula';
 @import 'table';

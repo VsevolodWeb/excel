@@ -3,6 +3,7 @@
 
 .control {
 	align-items: center;
+	background-color: transparent;
 	border: rem(1) solid currentColor;
 	color: var(--accent-color);
 	display: inline-flex;
@@ -11,7 +12,7 @@
 	font-size: rem(14);
 	cursor: pointer;
 
-	&:active {
+	&:focus {
 		background-color: var(--accent-color);
 		color: var(--main-color);
 	}
