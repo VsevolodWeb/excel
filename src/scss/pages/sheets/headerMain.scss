@@ -1,0 +1,29 @@
+@import '../../variables';
+@import '../../mixins';
+
+.sheetsHeaderMain {
+	align-items: center;
+	display: flex;
+
+	&__input {
+		font-size: rem(14);
+		padding: rem(8) rem(16);
+	}
+
+	&__controls {
+		margin-left: auto;
+	}
+
+	&__control {
+		background-color: transparent;
+		border-color: transparent;
+		margin: 0;
+		font-size: rem(16);
+		cursor: pointer;
+		color: var(--accent-color);
+
+		&:not(:last-child) {
+			margin-right: rem(8);
+		}
+	}
+}

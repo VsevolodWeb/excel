@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap');
+@import '~normalize.css';
+@import 'variables';
+@import 'mixins';
+
+.light {
+	--accent-color: #000;
+	--main-color: #fff;
+}
+
+.dark {
+	--accent-color: #fff;
+	--main-color: #000;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	@media (min-width: 769px) {
+		font-size: 18px;
+	}
+
+	@media (max-width: 768px) {
+		font-size: 12px;
+	}
+}
+
+html, body, #app {
+	height: 100%;
+}
+
+body {
+	font-family: 'Roboto', sans-serif;
+	background-color: var(--main-color);
+	color: var(--accent-color);
+}
+
+#app {
+	display: flex;
+	flex-direction: column;
+}
+
+@import 'base/input';
+@import 'components/control';
+@import 'components/container';
+@import 'pages/sheets/header';
+@import 'pages/sheets/headerMain';
+@import 'pages/sheets/toolbar';
+@import 'pages/sheets/formula';
+@import 'pages/sheets/table';
+@import 'pages/dashboard/header';
+@import 'pages/dashboard/dashboard';
+@import 'pages/dashboard/new';
+@import 'pages/dashboard/table';

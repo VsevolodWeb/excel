@@ -1,0 +1,19 @@
+@import '../../variables';
+@import '../../mixins';
+
+.dashboardTable {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+
+	& *:nth-child(even) {
+		text-align: right;
+	}
+
+	&__header {
+		font-weight: 700;
+	}
+
+	&__cell {
+		padding: rem(8)
+	}
+}

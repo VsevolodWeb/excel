@@ -45,6 +45,7 @@ module.exports = {
 	plugins: [
 		new CleanWebpackPlugin(),
 		new HtmlWebpackPlugin({
+			template: 'index.html',
 			favicon: faviconName,
 			minify: {
 				removeComments: isProd,
