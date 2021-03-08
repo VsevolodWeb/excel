@@ -1,0 +1,21 @@
+@import '../../variables';
+@import '../../mixins';
+
+.dashboardNew {
+	&__link {
+		align-items: center;
+		border: rem(5) solid var(--accent-color);
+		color: var(--accent-color);
+		display: flex;
+		font-size: rem(50);
+		height: rem(100);
+		justify-content: center;
+		text-decoration: none;
+		width: rem(100);
+
+		&:hover {
+			background-color: var(--accent-color);
+			color: var(--main-color);
+		}
+	}
+}

@@ -1,0 +1,9 @@
+@import '../../variables';
+@import '../../mixins';
+
+.sheetsHeader {
+	$header-grid-gap: rem(10);
+	display: grid;
+	grid-gap: 20px;
+	padding: $header-grid-gap;
+}

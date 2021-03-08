@@ -46,8 +46,13 @@ body {
 
 @import 'base/input';
 @import 'components/control';
-@import 'header';
-@import 'headerMain';
-@import 'toolbar';
-@import 'formula';
-@import 'table';
+@import 'components/container';
+@import 'pages/sheets/header';
+@import 'pages/sheets/headerMain';
+@import 'pages/sheets/toolbar';
+@import 'pages/sheets/formula';
+@import 'pages/sheets/table';
+@import 'pages/dashboard/header';
+@import 'pages/dashboard/dashboard';
+@import 'pages/dashboard/new';
+@import 'pages/dashboard/table';

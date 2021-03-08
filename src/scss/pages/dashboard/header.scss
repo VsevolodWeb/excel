@@ -1,0 +1,11 @@
+@import '../../variables';
+@import '../../mixins';
+
+.dashboardHeader {
+	align-items: center;
+	display: flex;
+	font-size: rem(32);
+	font-weight: 700;
+	justify-content: center;
+	padding: rem(24);
+}

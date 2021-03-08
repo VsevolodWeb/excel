@@ -1,7 +1,7 @@
-@import "variables";
-@import "mixins";
+@import '../../variables';
+@import '../../mixins';
 
-.toolbar {
+.sheetsToolbar {
 	&__control {
 		display: inline-block;
 
